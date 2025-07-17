@@ -11,7 +11,9 @@ import org.jetbrains.annotations.NotNull;
 public class ZawszeDostepnaAkcja extends AnAction {
 
     @Override
-    public void update(@NotNull AnActionEvent e) {
+    public void update(@NotNull AnActionEvent event) {
+//        Project project = event.getProject();
+//        event.getPresentation().setEnabledAndVisible(project != null);
     }
 
     @Override

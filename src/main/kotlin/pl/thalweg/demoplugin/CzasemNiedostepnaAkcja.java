@@ -11,26 +11,27 @@ import org.jetbrains.annotations.NotNull;
 public class CzasemNiedostepnaAkcja extends AnAction {
 
     @Override
-    public void update(@NotNull AnActionEvent e) {
+    public void update(@NotNull AnActionEvent event) {
+        event.getPresentation().setEnabled(false);
     }
 
     @Override
-    public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
-        Project project = anActionEvent.getProject();
+    public void actionPerformed(@NotNull AnActionEvent event) {
+        Project project = event.getProject();
 
         StringBuilder message = new StringBuilder();
 
-        Navigatable element = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+        Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
 
         if (element != null) {
             message.append("You found the hidden action for:\n")
-                    .append(anActionEvent.getPresentation().getText())
+                    .append(event.getPresentation().getText())
                     .append(" presentation\n")
                     .append("Selected element: ")
                     .append(element);
         }
 
-        String title = anActionEvent.getPresentation().getDescription();
+        String title = event.getPresentation().getDescription();
 
         Messages.showMessageDialog(
                 project,
