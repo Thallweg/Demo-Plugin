@@ -1,7 +1,9 @@
+import org.jetbrains.intellij.platform.gradle.tasks.RunIdeTask
+
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.1.0"
-    id("org.jetbrains.intellij.platform") version "2.5.0"
+    id("org.jetbrains.kotlin.jvm") version "2.2.0"
+    id("org.jetbrains.intellij.platform") version "2.6.0"
 }
 
 group = "pl.thalweg"
@@ -44,7 +46,10 @@ tasks {
         sourceCompatibility = "21"
         targetCompatibility = "21"
     }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "21"
+}
+
+tasks.named<RunIdeTask>("runIde") {
+    jvmArgumentProviders += CommandLineArgumentProvider {
+        listOf("-Didea.kotlin.plugin.use.k2=true")
     }
 }
