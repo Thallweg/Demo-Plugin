@@ -27,18 +27,18 @@
 
     </extensions>
     <actions>
-        <action id="pl.thalweg.demoplugin.PopupDialog"
-                class="pl.thalweg.demoplugin.PopupDialog"
-                text="Niezła Akcja"
+        <action id="pl.thalweg.demoplugin.CzasemNiedostepnaAkcja"
+                class="pl.thalweg.demoplugin.CzasemNiedostepnaAkcja"
+                text="Ukryta Akcja"
                 description="Zapowiada się niezła akcja">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
-        <action id="pl.thalweg.demoplugin.InnaAkcja"
-                class="pl.thalweg.demoplugin.InnaAkcja"
-                text="Inna Akcja"
-                description="Robi coś innego">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="shift alt O"/>
+        </action>
+        <action id="pl.thalweg.demoplugin.ZawszeDostepnaAkcja"
+                class="pl.thalweg.demoplugin.ZawszeDostepnaAkcja"
+                text="Ogólna Akcja"
+                description="Jaka jest każdy widzi">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
 </idea-plugin>

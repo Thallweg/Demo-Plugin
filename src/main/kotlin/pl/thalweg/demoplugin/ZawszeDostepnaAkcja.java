@@ -8,19 +8,26 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.pom.Navigatable;
 import org.jetbrains.annotations.NotNull;
 
-public class InnaAkcja extends AnAction {
+public class ZawszeDostepnaAkcja extends AnAction {
+
+    @Override
+    public void update(@NotNull AnActionEvent e) {
+    }
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
-
         Project project = anActionEvent.getProject();
 
-        StringBuilder message = new StringBuilder(anActionEvent.getPresentation().getText() + "Selected!");
+        StringBuilder message = new StringBuilder();
 
         Navigatable element = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
 
         if (element != null) {
-            message.append("\nSelected element:").append(element);
+            message.append("You used the common action for:\n")
+                    .append(anActionEvent.getPresentation().getText())
+                    .append(" presentation\n")
+                    .append("Selected element: ")
+                    .append(element);
         }
 
         String title = anActionEvent.getPresentation().getDescription();
