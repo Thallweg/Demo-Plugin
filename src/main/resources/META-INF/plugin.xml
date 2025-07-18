@@ -12,7 +12,7 @@
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description>Testowy plugin do celow testow developowania pluginu. Demonstracja mozliwosci Intellij DevKit. Do usuniecia</description>
+    <description>Test plugin used to demonstrate to my coworkers how to develop plugins and how they work. Will be deleted after presentation. WIP</description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -23,7 +23,6 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
-
 
     <actions>
         <group
