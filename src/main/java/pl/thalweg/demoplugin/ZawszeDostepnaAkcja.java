@@ -12,8 +12,6 @@ public class ZawszeDostepnaAkcja extends AnAction {
 
     @Override
     public void update(@NotNull AnActionEvent event) {
-//        Project project = event.getProject();
-//        event.getPresentation().setEnabledAndVisible(project != null);
     }
 
     @Override
@@ -27,7 +25,7 @@ public class ZawszeDostepnaAkcja extends AnAction {
         if (element != null) {
             message.append("You used the common action for:\n")
                     .append(anActionEvent.getPresentation().getText())
-                    .append(" presentation\n")
+                    .append(" ziomek\n")
                     .append("Selected element: ")
                     .append(element);
         }

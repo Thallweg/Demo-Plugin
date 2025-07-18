@@ -6,13 +6,23 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.pom.Navigatable;
+import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class CzasemNiedostepnaAkcja extends AnAction {
 
     @Override
     public void update(@NotNull AnActionEvent event) {
-        event.getPresentation().setEnabled(false);
+        if (LocalTime.now().getSecond()>30) {
+            System.out.println("Enabling CzasemNiedostepnaAkcja");
+            event.getPresentation().setEnabledAndVisible(true);
+        } else {
+            System.out.println("Disabling CzasemNiedostepnaAkcja");
+            event.getPresentation().setEnabledAndVisible(false);
+        }
     }
 
     @Override
