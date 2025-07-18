@@ -46,6 +46,16 @@ tasks {
         sourceCompatibility = "21"
         targetCompatibility = "21"
     }
+
+    signPlugin {
+        certificateChainFile.set(File(System.getenv("INTELLIJ_CERTIFICATE")))
+        privateKeyFile.set(File(System.getenv("INTELLIJ_PRIVATE_KEY")))
+        password.set(providers.environmentVariable("INTELLIJ_PASSWORD"))
+    }
+
+    publishPlugin {
+        token.set(providers.environmentVariable("INTELLIJ_TOKEN"))
+    }
 }
 
 tasks.named<RunIdeTask>("runIde") {
