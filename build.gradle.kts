@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "pl.thalweg"
-version = "1.1-SNAPSHOT"
+version = "1.2-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -31,7 +31,7 @@ dependencies {
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild = "251"
+            sinceBuild = "243"
         }
 
         changeNotes = """
